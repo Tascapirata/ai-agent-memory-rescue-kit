@@ -125,22 +125,23 @@ result = compressor.compress(messages)
 
 ## What's in the full kit
 
-The demo covers 2 of the 5 patterns. The [full AI Agent Memory Rescue Kit](https://taiwildlab.com) ($75) includes:
+The demo above runs the diagnostic patterns standalone. The [full AI Agent Memory Rescue Kit](https://taiwildlab.com) (69€) adds the configuration material and templates to apply them in production:
 
-| Feature | Demo | Full kit |
+| What you get | Demo | Full kit |
 |---|---|---|
-| Context overflow detection | ✓ | ✓ |
-| Stale memory detection | ✓ | ✓ |
-| Semantic importance scoring | — | ✓ |
-| Hybrid vector + KV memory store | — | ✓ |
-| Automatic pruning on overflow | — | ✓ |
-| LangChain drop-in adapter | — | ✓ |
-| CrewAI drop-in adapter | — | ✓ |
-| System prompt templates (6 architectures) | — | ✓ |
-| Implementation checklist (21 items) | — | ✓ |
-| 30-min setup guarantee | — | ✓ |
+| Context overflow detection (script) | ✓ | ✓ |
+| Stale memory detection (script) | ✓ | ✓ |
+| Context compression (sliding window) | ✓ | ✓ |
+| Memory diagnostic CLI (`memory_diagnostic.py`) | — | ✓ |
+| Pattern analysis CLI (`memory_patterns.py`) | — | ✓ |
+| 7 system prompt templates (diagnostic, configuration, recovery, LangChain) | — | ✓ |
+| 24-item implementation checklist (LangChain, CrewAI, monitoring, testing) | — | ✓ |
+| PDF guide: the 5 most common memory mistakes | — | ✓ |
+| Email support (24h response) | — | ✓ |
 
 **Full kit:** [taiwildlab.com](https://taiwildlab.com)
+
+The kit ships with diagnostic scripts, templates, and configuration guidance to apply alongside your existing framework. The LangChain and CrewAI material is a structured checklist plus a "LangChain - Production Ready" template you adapt to your stack.
 
 ---
 
@@ -148,13 +149,12 @@ The demo covers 2 of the 5 patterns. The [full AI Agent Memory Rescue Kit](https
 
 The failure mode is silent. Your agent doesn't throw an exception when it overflows — it either truncates the context (losing information) or hallucinates (making things up). You only notice when users report wrong answers.
 
-The standard fix (`ConversationSummaryBufferMemory`) helps with overflow but doesn't solve:
-- Which memories are worth keeping
-- How to score relevance across time
-- How to integrate with vector stores without external infrastructure
-- How to handle multi-agent memory sharing
+The standard fix (`ConversationSummaryBufferMemory`) helps with overflow but doesn't tell you:
+- Which patterns are leaking your tokens (the diagnostic scripts catch them)
+- How to configure memory architecture from scratch (the 7 templates cover diagnostic, configuration, recovery, and LangChain-specific cases)
+- What concrete checks belong in your setup before going to production (the 24-item checklist)
 
-The full kit solves all of these.
+The full kit gives you the diagnostic and configuration layer that sits next to the framework, not a replacement for it.
 
 ---
 
